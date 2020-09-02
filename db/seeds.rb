@@ -5,11 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+puts "destroying old data"
+Appearance.destroy_all
 Guest.destroy_all
+Episode.destroy_all
 
 require 'csv'
 
+puts "seeding guests"
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'daily_show_guests.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.first(100).each do |row|
@@ -18,6 +21,7 @@ csv.first(100).each do |row|
   g.save
 end
 
+puts "seeding episodes"
 date = Date.parse('2015-09-08')
 
 (1..40).each do |num|
@@ -25,3 +29,7 @@ date = Date.parse('2015-09-08')
   date = date.next
 end
 
+puts "seeding appearances"
+38.times do
+Appearance.create(episode_id: Episode.ids.sample, guest_id: Guest.ids.sample, rating: rand(1..5))
+end

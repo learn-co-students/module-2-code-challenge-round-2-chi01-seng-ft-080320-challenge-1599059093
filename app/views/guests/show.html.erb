@@ -1,0 +1,13 @@
+
+
+<h1><%= @guest.name %></h1>
+
+
+
+<% @guest.sort_episodes_by_rating.each do  |key, value| %>
+     <% @episode = Episode.find(key) %>
+    <h3>Episode :<%= @episode.id %><h3>
+    <h3>Rating :<%= value %><h3>
+    <h3>Date: <%= link_to(@episode.date, episode_path(@episode)) %></h3><br><br>
+<%end%>
+

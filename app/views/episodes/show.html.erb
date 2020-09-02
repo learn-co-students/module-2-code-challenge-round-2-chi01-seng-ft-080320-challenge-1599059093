@@ -1,5 +1,7 @@
+<header style="text-align: center">
 <h1> Episode Number:<%= @episode.number %> </h1>
 <h4> Aired: <%= @episode.date %> </h4>
+</header>
 
 <h2> Guests </h2>
 <% @episode.appearances.each do |appearance| %>
@@ -9,7 +11,7 @@
 <% end %>
 <br>
 <h2> Average Rating for Episode </h2>
-<p><%= @episode.average_rating %><p>
+ <p style="margin-left: 120px"><%= @episode.average_rating %><p>
 
 <br>
 <br>

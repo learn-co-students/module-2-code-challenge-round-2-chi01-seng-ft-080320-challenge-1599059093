@@ -1,4 +1,4 @@
-<h1>All The Guests</h1>
+<h1 style="text-align: center">All The Guests</h1>
 
 <ul>
   <% @guests.each do |guest| %>
@@ -7,6 +7,6 @@
 </ul>
 
 <br>
-<br>
+
 
 <%= button_to "Create new Guest Appearance", new_appearance_path, {method: :get} %>

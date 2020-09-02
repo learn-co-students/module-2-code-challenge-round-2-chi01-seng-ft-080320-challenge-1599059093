@@ -1,4 +1,4 @@
-<h1>All Episodes</h1>
+<h1 style="text-align: center">All Episodes</h1>
 
 <ul>
   <% @episodes.each do |episode| %>
@@ -7,6 +7,6 @@
 </ul>
 
 <br>
-<br>
+
 
 <%= button_to "Create new Guest Appearance", new_appearance_path, {method: :get} %>

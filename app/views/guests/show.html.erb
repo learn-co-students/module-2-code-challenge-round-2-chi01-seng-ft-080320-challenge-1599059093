@@ -1,6 +1,7 @@
-<h1> Profile Page for <%= @guest.name %> </h1>
+<header style="text-align: center">
+<h1 > Profile Page for <%= @guest.name %> </h1>
 <h4> Occupation: <%= @guest.occupation %> </h4>
-
+</header>
 <h2> Episodes </h2>
 <% @guest.appearance_by_rating.each do |appearance| %>
 <ul> 

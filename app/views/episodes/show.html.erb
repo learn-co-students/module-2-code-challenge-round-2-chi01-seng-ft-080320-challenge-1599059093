@@ -1,0 +1,13 @@
+<h1> Episode Show Page </h1>
+
+
+<p>Date: <%=@episode.date%></p>
+
+<p>Episode number: <%=@episode.number%></p>
+
+<ul>
+    <%= @episode.guests.each do |guest|%>
+   <li> <%= link_to guest.name, guest_path(guest) %></li>
+   <% end %>
+
+   </ul>

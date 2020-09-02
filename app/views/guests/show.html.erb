@@ -1,0 +1,21 @@
+<h1>Guest Show Page</h1>
+
+<h4>Guest: <%= @guest.name %></h4>
+<h4>Episode appearances: </h4>
+<ul>
+<% @guest.episodes.each do |episode| %>
+    <% @guest.appearances.each do |appearance| %>
+        <% if episode.id == appearance.episode_id %>
+        <% @rating = appearance.rating %>
+        <% end %>
+    <% end %>
+<li><%= link_to "#{episode.date} | Rating: #{@rating}", episode_path(episode) %></li>
+<% end %>
+</ul>
+<br>
+<button><%= link_to "Log a New Appearance", new_appearance_path, {style: "text-decoration: none" } %></button>
+<br><br>
+<button><%= link_to "Back to Episode Index", episodes_path, {style: "text-decoration: none" } %></button>
+<br><br>
+<button><%= link_to "Back to Guest Index", guests_path, {style: "text-decoration: none" } %></button>
+

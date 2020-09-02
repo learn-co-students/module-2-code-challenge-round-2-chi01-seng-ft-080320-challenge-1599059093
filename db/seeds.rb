@@ -1,13 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts"seeding data"
 
+Appearance.destroy_all
 Guest.destroy_all
-
+Episode.destroy_all
 require 'csv'
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'daily_show_guests.csv'))
@@ -25,3 +20,8 @@ date = Date.parse('2015-09-08')
   date = date.next
 end
 
+50.times do
+Appearance.create(guest_id: Guest.all.sample.id, episode_id: Episode.all.sample.id, rating: rand(1..10))
+end
+
+puts"done"

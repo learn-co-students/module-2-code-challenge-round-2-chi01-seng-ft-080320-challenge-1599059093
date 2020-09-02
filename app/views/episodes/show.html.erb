@@ -1,0 +1,17 @@
+<h1> Look at this fantastic episode </h1>
+
+<% if flash[:success] %>
+<h2> <%= flash[:success] %> </h2>
+<% end %>
+
+
+<h4> Date: <%= @episode.date %><br> </h4>
+<h3> Average Rating: <%= @episode.average_rating %> </h5>
+
+<h3> List of Guests: </h3>
+<% @episode.appearances.each do |appearance| %>
+    <%= link_to(appearance.guest.name, guest_path(appearance.guest)) %> <br>
+    <% end %>
+
+    <%= button_to "Back to Guest index", guests_path, method: :get %>
+    <%= button_to "Back to Episode index", episodes_path, method: :get %>

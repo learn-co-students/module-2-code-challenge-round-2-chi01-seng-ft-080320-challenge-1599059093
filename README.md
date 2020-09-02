@@ -21,15 +21,15 @@ Before you begin coding your solution, clone this repo and then `cd` into it. Th
 
 The application keeps track of the guests that have appeared on the show.
 
-There are three models in the domain: Guest, Episode, and Appearance.
+[X] There are three models in the domain: Guest, Episode, and Appearance.
 
-Guests and Episodes have a many to many relationship through Appearances. A single Appearance belongs to one Guest and one Episode.
+[X] Guests and Episodes have a many to many relationship through Appearances. A single Appearance belongs to one Guest and one Episode.
 
 ## What You Already Have
 
-The starter code includes migrations, models, and seed data for Guests and Episodes. There are also routes, controller actions, and views to support listing the guests and episodes.
+[X] The starter code includes migrations, models, and seed data for Guests and Episodes. There are also routes, controller actions, and views to support listing the guests and episodes.
 
-After running the setup instructions above, visiting `'/guests'` will display all of the guests, and visiting `'/episodes'` will display all of the episodes.
+[X] After running the setup instructions above, visiting `'/guests'` will display all of the guests, and visiting `'/episodes'` will display all of the episodes.
 
 ***Schema***
 
@@ -72,54 +72,54 @@ Update the code of the application to meet the following deliverables. Follow RE
 
 To log that a specific Guest appeared on a certain Episode, we need to create the Appearance model. **Make the necessary updates to the schema and models** so that:
 
-- Guest can appear on many episodes
-- Episode can have multiple guests
-- Appearance stores a numeric rating
+- [X] Guest can appear on many episodes
+- [X] Episode can have multiple guests
+- [X] Appearance stores a numeric rating
 
 ### 2. New Appearance Form
 
 A user can fill out a form to create a new Appearance. They can:
 
-- Choose an existing guest from a select dropdown
-- Choose an existing episode from a select dropdown
-- Enter a numeric rating
-- Submit the form
+- [X] Choose an existing guest from a select dropdown
+- [X] Choose an existing episode from a select dropdown
+- [X] Enter a numeric rating
+- [X] Submit the form
 
-After submitting the form, the user should be redirected to the selected episode's show page.
+[X] After submitting the form, the user should be redirected to the selected episode's show page.
 
 ### 3. Episode Show Page
 
 On the episode show page, a user should see:
 
-- Episode date
-- A list of the guests who were on that episode
-- Each guest's name should link to the Guest Show page
+- [X] Episode date
+- [X] A list of the guests who were on that episode
+- [X] Each guest's name should link to the Guest Show page
 
 ### 4. Guest Show Page Episode links
 
-On the Guest show page, add a list of the Episodes the Guest has appeared on.
+[X] On the Guest show page, add a list of the Episodes the Guest has appeared on.
 
 For each Episode, show the:
 
-- date of the Episode
-- rating for the Appearance
+- [X] date of the Episode
+- [X] rating for the Appearance
 
-Each Episode date should link to the show page for that Episode.
+[X] Each Episode date should link to the show page for that Episode.
 
 ### 5. Appearance Rating Validation
 
-The rating on an Appearance should be between 1 and 5 (inclusive - `1` and `5` are okay).
+[X] The rating on an Appearance should be between 1 and 5 (inclusive - `1` and `5` are okay).
 
-- Add a validation to ensure that the rating is between 1 and 5.
-- Add handling for this error to the Appearance create action.
-- The validation error should be shown on the Appearance creation form when a user attempts to save an appearance with an invalid rating.
+- [X] Add a validation to ensure that the rating is between 1 and 5.
+- [X] Add handling for this error to the Appearance create action.
+- [X] The validation error should be shown on the Appearance creation form when a user attempts to save an appearance with an invalid rating.
 
 ### 6. Advanced: Additional Appearance Validation
 
 A Guest should only appear on a given Episode once.
 
-- Add a validation to Appearance to ensure that each Guest can only appear once on the same Episode.
-- Update the error handling on the Appearance creation form to show this validation error.
+- [X] Add a validation to Appearance to ensure that each Guest can only appear once on the same Episode.
+- [X] Update the error handling on the Appearance creation form to show this validation error.
 
 ### 7. Advanced: Episode Average Rating
 

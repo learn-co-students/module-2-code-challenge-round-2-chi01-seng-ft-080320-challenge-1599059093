@@ -1,0 +1,19 @@
+<header style="text-align: center">
+<h1 > Profile Page for <%= @guest.name %> </h1>
+<h4> Occupation: <%= @guest.occupation %> </h4>
+</header>
+<h2> Episodes </h2>
+<% @guest.appearance_by_rating.each do |appearance| %>
+<ul> 
+<li>Episode Number: <%= link_to appearance.episode.number, episode_path(appearance.episode) %>
+<ul>
+<li> Episode Date: <%= appearance.episode.date %> </li>
+<li>Appearance Rating: <%= appearance.rating %> </li>
+<li>Episode Rating: <%= appearance.episode.average_rating %></li>
+</ul>
+</li> </ul>
+<% end %>
+
+<br>
+<br>
+<%= button_to "Return to Guests List", guests_path, {method: :get} %>

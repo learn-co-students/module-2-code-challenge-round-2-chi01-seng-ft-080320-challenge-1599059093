@@ -25,6 +25,8 @@ There are three models in the domain: Guest, Episode, and Appearance.
 
 Guests and Episodes have a many to many relationship through Appearances. A single Appearance belongs to one Guest and one Episode.
 
+Episode -< Appearance >- Guest
+
 ## What You Already Have
 
 The starter code includes migrations, models, and seed data for Guests and Episodes. There are also routes, controller actions, and views to support listing the guests and episodes.

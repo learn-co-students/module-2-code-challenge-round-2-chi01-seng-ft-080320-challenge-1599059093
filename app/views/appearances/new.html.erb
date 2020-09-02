@@ -1,6 +1,13 @@
 
 <h1>Log a New Appearance</h1>
 
+<ul>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+       <li> <%= error %></li>
+    <% end %>
+<% end %>
+</ul>
 <%= form_for @appearance do |f| %>
 
     <%= f.label :guest_id, "Choose a guest:" %>

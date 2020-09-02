@@ -12,5 +12,10 @@
 <li><%= link_to "#{episode.date} | Rating: #{@rating}", episode_path(episode) %></li>
 <% end %>
 </ul>
-
+<br>
+<button><%= link_to "Log a New Appearance", new_appearance_path, {style: "text-decoration: none" } %></button>
+<br><br>
+<button><%= link_to "Back to Episode Index", episodes_path, {style: "text-decoration: none" } %></button>
+<br><br>
+<button><%= link_to "Back to Guest Index", guests_path, {style: "text-decoration: none" } %></button>
 

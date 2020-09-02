@@ -1,13 +1,19 @@
 <h1>Episode Show Page</h1>
 
 <h4>Date: <%= @episode.date %></h4>
-<h4>Average rating: <%= @episode.average_rating  %>  </h4>
+<h4>Average rating: 
+    <%if @episode.average_rating %>  
+        <%= @episode.average_rating %>
+    <% else %>
+        <%= "This episode hasn't been rated." %> 
+    <% end %>
+</h4>
 <h4>Episode Guests: </h4>
-<ul>
-<% @episode.guests.each do |guest| %>
-<li><%= link_to guest.name, guest_path(guest) %></li>
-<% end %>
-</ul>
+    <ul>
+        <% @episode.guests.each do |guest| %>
+            <li><%= link_to guest.name, guest_path(guest) %></li>
+        <% end %>
+    </ul>
 <br>
 <button><%= link_to "Log a New Appearance", new_appearance_path, {style: "text-decoration: none" } %></button>
 <br><br>

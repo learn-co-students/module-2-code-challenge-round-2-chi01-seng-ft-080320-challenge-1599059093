@@ -2,16 +2,12 @@
 
 <h4>Guest: <%= @guest.name %></h4>
 <h4>Episode appearances: </h4>
-<ul>
-<% @guest.episodes.each do |episode| %>
-    <% @guest.appearances.each do |appearance| %>
-        <% if episode.id == appearance.episode_id %>
-        <% @rating = appearance.rating %>
+    <ul>
+        <% @guest.sort_by_highest_appearance_rating.each do |appearance| %>
+            <li><%= link_to "#{appearance.episode.date} | Rating: #{appearance.rating}", episode_path(appearance.episode_id) %></li>
         <% end %>
-    <% end %>
-<li><%= link_to "#{episode.date} | Rating: #{@rating}", episode_path(episode) %></li>
-<% end %>
-</ul>
+    </ul>
+
 <br>
 <button><%= link_to "Log a New Appearance", new_appearance_path, {style: "text-decoration: none" } %></button>
 <br><br>

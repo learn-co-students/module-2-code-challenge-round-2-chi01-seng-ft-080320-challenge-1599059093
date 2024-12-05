@@ -1,0 +1,11 @@
+<h1> Look at this Guest! </h1>
+
+<h2> <%= @guest.name %> </h2>
+<h3>  Episodes stared in: </h3>
+
+
+    <% @guest_ratings.each do |appearance| %>
+        Rating: <%= appearance.rating %> | Date: <%= link_to(appearance.episode.date, episode_path(appearance.episode.id)) %> | Episode Number: <%= appearance.episode.number %> <br>
+        <% end %>
+
+    <%= button_to "Back to index", guests_path, method: :get %>

@@ -1,0 +1,13 @@
+<% if flash[:success] %>
+<p style="color: green"><%= flash[:success] %></p>
+<% end %>
+
+<i><h5>Episode <%= @episode.id %></h5></i>
+Date: <%= @episode.date %>
+<h5><b> Average Appearance Rating: <%= @episode.appearance_rating_average %> </b></h5>
+<h5> Guests </h5>
+<ul>
+<% @episode.guests.each do |guest| %>
+<li><%= link_to guest.name, guest_path(guest) %></li>
+<% end %>
+</ul>

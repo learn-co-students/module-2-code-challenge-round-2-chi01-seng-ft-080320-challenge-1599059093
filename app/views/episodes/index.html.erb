@@ -1,7 +1,12 @@
-<h1>All Episodes</h1>
+<h1 style="text-align: center">All Episodes</h1>
 
 <ul>
   <% @episodes.each do |episode| %>
-    <li><%= "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}"%></li>
+    <li><%= link_to "Episode #{episode.number} - #{episode.date.strftime("%B %d, %Y")}", episode_path(episode)%></li>
   <% end %>
 </ul>
+
+<br>
+
+
+<%= button_to "Create new Guest Appearance", new_appearance_path, {method: :get} %>

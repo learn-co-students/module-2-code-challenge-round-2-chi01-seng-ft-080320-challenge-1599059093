@@ -1,0 +1,19 @@
+<h1><%= @guest.name %></h1>
+
+<ul>
+<% @guest.episodes.each do |episode_instance| %>
+<li> Date: <%= link_to episode_instance.date, episode_path(episode_instance.id) %>
+<% episode_instance.appearances.each do |appearance_instance|%>
+<br>Rating: <%= appearance_instance.rating %>
+<% end%>
+<% end %>
+</ul>
+
+<%#not sure if rating was requesting above or below, so I have both %>
+
+<% @guest.appearances.each do |appearance_instance|%>
+My Ratings: <%= "#{appearance_instance.episode.date} - #{appearance_instance.rating} " %>   
+<% end%>
+
+
+
